@@ -1,7 +1,18 @@
-import Image from "next/image";
+import { auth } from "@/auth";
+import { SignIn } from "@/components/sign-in";
 
-export default function Home() {
+export default async function Page() {
+  const session = await auth();
+
+  console.log('session', session)
+
   return (
-    <div>Page</div>
+    <div>
+      <SignIn />
+
+      <pre className="py-6 px-4 whitespace-pre-wrap break-all">
+        {JSON.stringify(session, null, 2)}
+      </pre>
+    </div>
   );
 }
