@@ -1,5 +1,5 @@
 import { signIn } from "@/auth";
-
+import { signOut } from "@/auth";
 import { Button } from "./ui/button";
 
 // Sign in with a provider
@@ -9,11 +9,23 @@ export function SignIn({ provider, ...props }: { provider?: string } & React.Com
         <form
             action={async () => {
                 "use server"
-                console.log('provider', provider)
                 await signIn(provider)
             }}
         >
             <Button {...props}>Sign In</Button>
+        </form>
+    )
+}
+
+export function SignOut(props: React.ComponentPropsWithRef<typeof Button>) {
+    return (
+        <form
+            action={async () => {
+                "use server"
+                await signOut()
+            }}
+        >
+            <Button {...props} variant="ghost">Sign Out</Button>
         </form>
     )
 }

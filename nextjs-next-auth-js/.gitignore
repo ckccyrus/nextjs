@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#firebase credential
+nextjs-nextauth-test-firebase-adminsdk-bocvw-66d5d6f972.json
+firebase-nextjs-nextauth-test.js
