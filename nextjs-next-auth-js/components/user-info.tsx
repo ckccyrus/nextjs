@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 // import { SignIn, SignOut } from "./auth-component";
-import { SignOut } from "./auth-component";
+import { SignIn, SignOut } from "./auth-component";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 import {
@@ -16,9 +16,7 @@ export default async function UserInfo() {
     const session = await auth();
     if (!session?.user) {
         return (
-            <CustomLink href="/auth/signin">
-                <Button>Sign In</Button>
-            </CustomLink>
+            <SignIn />
         )
     }
     return (

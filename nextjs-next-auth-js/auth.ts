@@ -16,10 +16,16 @@ const config = {
             if (trigger === "update") token.name = session.user.name
             return token
         },
+        // redirect({ url, baseUrl }) {
+        //     // Allows relative callback URLs
+        //     if (url.startsWith("/")) return `${baseUrl}${url}`
+
+        //     // Allows callback URLs on the same origin
+        //     if (new URL(url).origin === baseUrl) return url
+
+        //     return baseUrl
+        // }
     },
-    // pages: {
-    //     signIn: "/auth/signin"
-    // },
     // debug: process.env.NODE_ENV !== "production" ? true : false,
 } satisfies NextAuthConfig
 

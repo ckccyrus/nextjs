@@ -4,7 +4,9 @@ interface CustomLinkProps extends React.LinkHTMLAttributes<HTMLAnchorElement> {
     href: string    //must have href
 }
 
-export default function CustomLink({ href, children, className, ...restProps }: CustomLinkProps) {
+const CustomLink = ({
+    href, children, className, ...restProps
+}: CustomLinkProps) => {
     const _isInternalLink = href.startsWith("/");
     const _isAnchorLink = href.startsWith("#");
 
@@ -16,3 +18,5 @@ export default function CustomLink({ href, children, className, ...restProps }: 
         )
     }
 }
+
+export default CustomLink;

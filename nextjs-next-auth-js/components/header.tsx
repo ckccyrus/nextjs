@@ -1,5 +1,5 @@
-import CustomLink from "../custom-link";
-import UserInfo from "../user-info";
+import CustomLink from "./custom-link";
+import UserInfo from "./user-info";
 
 export default function Header() {
     return (
